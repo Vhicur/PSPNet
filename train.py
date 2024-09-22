@@ -105,7 +105,7 @@ if __name__ == "__main__":
     #   一般来讲，网络从0开始的训练效果会很差，因为权值太过随机，特征提取效果不明显，因此非常、非常、非常不建议大家从0开始训练！
     #   如果一定要从0开始，可以了解imagenet数据集，首先训练分类模型，获得网络的主干部分权值，分类模型的 主干部分 和该模型通用，基于此进行训练。
     #----------------------------------------------------------------------------------------------------------------------------#
-    model_path      = "model_data/resnet50-imagenet.pth"
+    model_path      = "model_data/resnet50_v2.pth"
     #---------------------------------------------------------#
     #   downsample_factor   下采样的倍数8、16 
     #                       8下采样的倍数较小、理论上效果更好。
@@ -224,7 +224,7 @@ if __name__ == "__main__":
     #------------------------------------------------------------------#
     #   VOCdevkit_path  数据集路径
     #------------------------------------------------------------------#
-    VOCdevkit_path  = 'VOCdevkit/VOCdevkit'
+    VOCdevkit_path  = 'VOCdevkit\\VOCdevkit'
     #------------------------------------------------------------------#
     #   建议选项：
     #   种类少（几类）时，设置为True
@@ -362,9 +362,9 @@ if __name__ == "__main__":
     #---------------------------#
     #   读取数据集对应的txt
     #---------------------------#
-    with open(os.path.join(VOCdevkit_path, "VOC2007/ImageSets/Segmentation/train.txt"),"r") as f:
+    with open(os.path.join(VOCdevkit_path, "VOC2007\\ImageSets\\Segmentation\\train.txt"),"r") as f:
         train_lines = f.readlines()
-    with open(os.path.join(VOCdevkit_path, "VOC2007/ImageSets/Segmentation/val.txt"),"r") as f:
+    with open(os.path.join(VOCdevkit_path, "VOC2007\\ImageSets\\Segmentation\\val.txt"),"r") as f:
         val_lines = f.readlines()
     num_train   = len(train_lines)
     num_val     = len(val_lines)
